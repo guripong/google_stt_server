@@ -8,16 +8,18 @@ router.get('/', function(req, res, next) {
 
 router.post('/',function(req,res,next){
   console.log('post왔당');
+  const fileName = './resources/ManualTest.wav';
 
-  main()
+
+  main(fileName)
 .catch(console.error).then(function (results){
-  console.log('then:',results);
+  console.log('결과:',results);
 });
 
 
 });
 
-async function main() {
+async function main(fileName) {
   // Imports the Google Cloud client library
   const speech = require('@google-cloud/speech');
   const fs = require('fs');
@@ -28,7 +30,7 @@ async function main() {
   // The name of the audio file to transcribe
 //  const fileName = './speech.mp3';
 
-  const fileName = './resources/ManualTest.wav';
+
   //const fileName = './resources/audio.raw';
   //const fileName = './resources/commercial_mono.wav';
 
@@ -58,7 +60,7 @@ async function main() {
 
   //const transcription = response.results.map(result => result.alternatives[0].transcript).join('\n');
   //console.log(`Transcription: ${transcription}`);
-  console.log(getdata);
+  //console.log(getdata);
   return getdata;
 }
 
