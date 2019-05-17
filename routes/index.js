@@ -10,7 +10,9 @@ router.post('/',function(req,res,next){
   console.log('post왔당');
 
   main()
-.catch(console.error);
+.catch(console.error).then(function (results){
+  console.log('then:',results);
+});
 
 
 });
@@ -57,6 +59,7 @@ async function main() {
   //const transcription = response.results.map(result => result.alternatives[0].transcript).join('\n');
   //console.log(`Transcription: ${transcription}`);
   console.log(getdata);
+  return getdata;
 }
 
 module.exports = router;
