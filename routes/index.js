@@ -101,7 +101,7 @@ router.post('/', function (req, res, next) {
       encoding: 'LINEAR16',
       sampleRateHertz: 16000,
       languageCode: 'en-US',
-      speechContext:[{
+      speechContexts:[{
         phrases:["left","right"]
       }]
      };
