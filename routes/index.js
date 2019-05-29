@@ -122,9 +122,6 @@ router.post('/', function (req, res, next) {
       }],
       "sampleRate": 16000,
       "languageCode": "en-US",
-      
-      
-
      };
 
      console.log('콘피그:',config);
@@ -195,7 +192,22 @@ async function main(fileName,config) {
   };
   //console.log('요구:',request);
 
+  var getdata='';
   // Detects speech in the audio file
+  client.longRunningRecognize(request).then(data=>{
+    const operation = data[0];
+    // Get a Promise representation of the final result of the job
+    return operation.promise();
+  }).then(data=>{
+    getdata = data[0].results[0].alternatives[0];
+    console.log(`${JSON.stringify(getdata)}`);
+
+    return getdata;
+  }).catch(err=>{
+    console.error('ERROR:', err);
+    return getdata;
+  });
+  /*
   const response = await client.recognize(request);
   var getdata='';
   console.log('진짜:',response);
@@ -208,6 +220,7 @@ async function main(fileName,config) {
   //console.log(`Transcription: ${transcription}`);
   //console.log(getdata);
   return getdata;
+  */
 }
 
 module.exports = router;
