@@ -194,7 +194,7 @@ async function main(fileName,config) {
 
   var getdata='';
   // Detects speech in the audio file
-  client.ㄱecognize(request).then(response=>{
+  client.recognize(request).then(response=>{
     console.log(`오리지날:`,`${JSON.stringify(response)}`);
     
     getdata= response[0].results[0].alternatives[0];
