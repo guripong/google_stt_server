@@ -118,7 +118,7 @@ router.post('/', function (req, res, next) {
       //"enableWordTimeOffsets": true,
       "encoding": "LINEAR16", //FLAC 도 테스트해볼것  LINEAR16
       "speechContexts": [{ 
-        "phrases": ["duck"]
+        "phrases": ["sokiyoung"]
       }],
       "sampleRate": 16000,
       "languageCode": "en-US",
