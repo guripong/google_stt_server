@@ -105,7 +105,7 @@ router.post('/', function (req, res, next) {
       encoding: 'LINEAR16', //FLAC 도 테스트해볼것
       sampleRateHertz: 16000,
       languageCode: 'en-US',
-      speechContexts:[{ phrases: ["my name is sokiyoung","sokiyoung"] }]
+      speechContexts:[{ phrases: ["My name is So ki young"] }]
 
      };
 
