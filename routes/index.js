@@ -102,7 +102,7 @@ router.post('/', function (req, res, next) {
       */
      var config = {
       enableWordTimeOffsets: true,
-      encoding: 'FLAC', //FLAC 도 테스트해볼것  LINEAR16
+      encoding: 'LINEAR16', //FLAC 도 테스트해볼것  LINEAR16
       sampleRateHertz: 16000,
       languageCode: 'en-US',
       speechContexts:[{ phrases: ["sokiyoung"] }]
