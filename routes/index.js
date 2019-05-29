@@ -100,6 +100,8 @@ router.post('/', function (req, res, next) {
         console.log('Error: ' + err);
       });
       */
+
+
      /*
      var config = {
       "enableWordTimeOffsets": true,
@@ -115,9 +117,9 @@ router.post('/', function (req, res, next) {
     var config = {
       //"enableWordTimeOffsets": true,
       "encoding": "LINEAR16", //FLAC 도 테스트해볼것  LINEAR16
-      "speechContexts": { 
+      "speechContexts": [{ 
         "phrases": ["duck"]
-      },
+      }],
       "sampleRate": 16000,
       
       
