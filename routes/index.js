@@ -104,11 +104,10 @@ router.post('/', function (req, res, next) {
       encoding: 'LINEAR16', //FLAC 도 테스트해볼것
       sampleRateHertz: 16000,
       languageCode: 'en-US',
-      maxAlternatives: 2,
-      profanityFilter: true,
       speechContexts:{
         "phrases":["my name is sokiyoung"]
-      }
+      },
+
      };
 
      console.log('콘피그:',config);
