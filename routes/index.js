@@ -121,7 +121,7 @@ router.post('/', function (req, res, next) {
       "audioChannelCount": 1,
       "enableSeparateRecognitionPerChannel": false,
       "languageCode": "en-US",
-      "maxAlternatives": 1,
+      "maxAlternatives": 2,
       "profanityFilter": true,
       "speechContexts": [
         {
