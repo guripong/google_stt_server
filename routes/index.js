@@ -195,6 +195,7 @@ async function main(fileName,config) {
   var getdata='';
   // Detects speech in the audio file
   client.longRunningRecognize(request).then(data=>{
+    console.log('갹:',data);
     const operation = data[0];
     // Get a Promise representation of the final result of the job
   //  return operation.promise();
