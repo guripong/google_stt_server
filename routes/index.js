@@ -102,7 +102,7 @@ router.post('/', function (req, res, next) {
       sampleRateHertz: 16000,
       languageCode: 'en-US',
       speechContexts:[{
-        phrases:["go to the left side","go to the right side","hololo"]
+        phrases:["go to the left side","go to the right side","my name is sokiyoung"]
       }]
      };
 
