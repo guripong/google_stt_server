@@ -123,14 +123,16 @@ router.post('/', function (req, res, next) {
       "languageCode": "en-US",
       "maxAlternatives": 1,
       "profanityFilter": true,
-      "speechContexts": [{ 
-        "phrases": [
-          "sokiyoung"
-        ]
-      }],
-      "enableWordTimeOffsets": true,
-      "useEnhanced": true,
-     };
+      "speechContexts": [
+        {
+          "phrases": [
+            "sokiyoung"
+          ]
+        }
+      ],
+      //"enableWordTimeOffsets": true,
+      //"useEnhanced": true,
+    };
 
      console.log('콘피그:',config);
 
