@@ -101,6 +101,8 @@ router.post('/', function (req, res, next) {
       encoding: 'LINEAR16',
       sampleRateHertz: 16000,
       languageCode: 'en-US',
+      maxAlternatives: 2,
+      profanityFilter: true,
       speechContexts:[{
         "phrases":["my name is sokiyoung"]
       }]
