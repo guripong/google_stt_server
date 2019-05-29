@@ -102,7 +102,7 @@ router.post('/', function (req, res, next) {
       sampleRateHertz: 16000,
       languageCode: 'en-US',
       speechContext:[{
-        phrases:["go to the left side","go to the right side"]
+        phrases:["left","right"]
       }]
      };
 
@@ -176,6 +176,7 @@ async function main(fileName,config) {
   const response = await client.recognize(request);
   var getdata='';
   console.log('진짜:',response);
+
   if( (response&&response[0].results) && response[0].results[0].alternatives)
   getdata= response[0].results[0].alternatives[0];
   // console.log(response[0].results[0].alternatives);
