@@ -117,11 +117,19 @@ router.post('/', function (req, res, next) {
     var config = {
       //"enableWordTimeOffsets": true,
       "encoding": "LINEAR16", //FLAC 도 테스트해볼것  LINEAR16
-      "speechContexts": [{ 
-        "phrases": ["sokiyoung"]
-      }],
-      "sampleRate": 16000,
+      "sampleRateHertz": 16000,
+      "audioChannelCount": 1,
+      "enableSeparateRecognitionPerChannel": false,
       "languageCode": "en-US",
+      "maxAlternatives": 1,
+      "profanityFilter": true,
+      "speechContexts": [{ 
+        "phrases": [
+          "sokiyoung"
+        ]
+      }],
+      "enableWordTimeOffsets": true,
+      "useEnhanced": true,
      };
 
      console.log('콘피그:',config);
