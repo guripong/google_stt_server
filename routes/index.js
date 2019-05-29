@@ -105,8 +105,8 @@ router.post('/', function (req, res, next) {
       sampleRateHertz: 16000,
       languageCode: 'en-US',
       speechContexts:{
-        "phrases":["my name is sokiyoung"]
-      },
+        phrases:["my name is sokiyoung"]
+      }
 
      };
 
