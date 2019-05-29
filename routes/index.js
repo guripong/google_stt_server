@@ -197,8 +197,8 @@ async function main(fileName,config) {
   client.longRunningRecognize(request).then(data=>{
     const operation = data[0];
     // Get a Promise representation of the final result of the job
-    return operation.promise();
-  }).then(data=>{
+  //  return operation.promise();
+ // }).then(data=>{
     getdata = data[0].results[0].alternatives[0];
     console.log(`${JSON.stringify(getdata)}`);
 
