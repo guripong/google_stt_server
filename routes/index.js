@@ -2,6 +2,9 @@ var express = require('express');
 const multiparty = require('multiparty');
 var router = express.Router();
 var fs = require('fs');
+const speech = require('@google-cloud/speech');
+const client = new speech.SpeechClient();
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
@@ -98,14 +101,14 @@ router.post('/', function (req, res, next) {
       });
       */
      var config = {
-      encoding: 'LINEAR16',
+      encoding: 'LINEAR16', //FLAC 도 테스트해볼것
       sampleRateHertz: 16000,
       languageCode: 'en-US',
       maxAlternatives: 2,
       profanityFilter: true,
-      speechContexts:[{
+      speechContexts:{
         "phrases":["my name is sokiyoung"]
-      }]
+      }
      };
 
      console.log('콘피그:',config);
@@ -146,11 +149,11 @@ router.post('/', function (req, res, next) {
 
 async function main(fileName,config) {
   // Imports the Google Cloud client library
-  const speech = require('@google-cloud/speech');
+ 
 
 
   // Creates a client
-  const client = new speech.SpeechClient();
+
 
   // The name of the audio file to transcribe
   //  const fileName = './speech.mp3';
