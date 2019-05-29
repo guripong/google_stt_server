@@ -121,6 +121,7 @@ router.post('/', function (req, res, next) {
         "phrases": ["duck"]
       }],
       "sampleRate": 16000,
+      "languageCode": "en-US",
       
       
 
