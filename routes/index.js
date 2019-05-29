@@ -167,10 +167,11 @@ async function main(fileName,config) {
   
 
   const request = {
-    audio: audio,
+ 
     config: config,
+    audio: audio,
   };
-
+  console.log('요구:',request);
 
   // Detects speech in the audio file
   const response = await client.recognize(request);
