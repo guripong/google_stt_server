@@ -100,14 +100,27 @@ router.post('/', function (req, res, next) {
         console.log('Error: ' + err);
       });
       */
+     /*
      var config = {
       "enableWordTimeOffsets": true,
       "encoding": "LINEAR16", //FLAC 도 테스트해볼것  LINEAR16
       "sampleRateHertz": 16000,
       "languageCode": "en-US",
-      "speechContexts":[{ 
+      "speechContexts": [{ 
         "phrases": ["duck"]
        }]
+
+     };
+     */
+    var config = {
+      //"enableWordTimeOffsets": true,
+      "encoding": "LINEAR16", //FLAC 도 테스트해볼것  LINEAR16
+      "speechContexts": { 
+        "phrases": ["duck"]
+      },
+      "sampleRate": 16000,
+      
+      
 
      };
 
