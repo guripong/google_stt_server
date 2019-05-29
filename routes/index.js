@@ -102,10 +102,11 @@ router.post('/', function (req, res, next) {
       sampleRateHertz: 16000,
       languageCode: 'en-US',
       speechContexts:[{
-        phrases:["go to the left side","go to the right side","my name is sokiyoung"]
+        "phrases":["go to the left side","go to the right side","my name is sokiyoung"]
       }]
      };
 
+     console.log('콘피그:',config);
 
 
     main(fileName,config).catch(function (error){
@@ -171,7 +172,7 @@ async function main(fileName,config) {
     config: config,
     audio: audio,
   };
-  console.log('요구:',request);
+  //console.log('요구:',request);
 
   // Detects speech in the audio file
   const response = await client.recognize(request);
