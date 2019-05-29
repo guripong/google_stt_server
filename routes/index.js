@@ -194,6 +194,7 @@ async function main(fileName,config) {
 
   var getdata='';
   // Detects speech in the audio file
+  /*
   client.recognize(request).then(response=>{
     console.log(`오리지날:`,`${JSON.stringify(response)}`);
     
@@ -205,10 +206,11 @@ async function main(fileName,config) {
     console.error('ERROR:', err);
     return getdata;
   });
-  /*
+  */
+  
   const response = await client.recognize(request);
   var getdata='';
-  console.log('진짜:',response);
+  console.log(`오리지날:`,`${JSON.stringify(response)}`);
 
   if( (response&&response[0].results) && response[0].results[0].alternatives)
   getdata= response[0].results[0].alternatives[0];
@@ -218,7 +220,5 @@ async function main(fileName,config) {
   //console.log(`Transcription: ${transcription}`);
   //console.log(getdata);
   return getdata;
-  */
 }
-
 module.exports = router;
