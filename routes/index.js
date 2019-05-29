@@ -102,10 +102,10 @@ router.post('/', function (req, res, next) {
       */
      var config = {
       enableWordTimeOffsets: true,
-      encoding: 'LINEAR16', //FLAC 도 테스트해볼것
+      encoding: 'FLAC', //FLAC 도 테스트해볼것  LINEAR16
       sampleRateHertz: 16000,
       languageCode: 'en-US',
-      speechContexts:[{ phrases: ["My name is So ki young"] }]
+      speechContexts:[{ phrases: ["sokiyoung"] }]
 
      };
 
