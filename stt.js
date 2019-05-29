@@ -41,5 +41,5 @@ app.use(function(err, req, res, next) {
 app.listen(process.env.PORT || 5555, function() {
   console.log("Server up and 5555 port listening");
 });
-module.exports = app;
+
 module.exports = app;

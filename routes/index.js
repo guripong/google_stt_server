@@ -2,7 +2,6 @@ var express = require('express');
 const multiparty = require('multiparty');
 var router = express.Router();
 var fs = require('fs');
-let wav = require('node-wav');
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
@@ -98,9 +97,18 @@ router.post('/', function (req, res, next) {
         console.log('Error: ' + err);
       });
       */
-    
+     var config = {
+      encoding: 'LINEAR16',
+      sampleRateHertz: 16000,
+      languageCode: 'en-US',
+      speechContext:[{
+        "phrases":["go to the left side","go to the right side"],
+      }],
+     };
 
-    main(fileName).catch(function (error){
+     
+
+    main(fileName,config).catch(function (error){
       console.log(error);//console.error
       if(error){
         stterror=1;
@@ -133,7 +141,7 @@ router.post('/', function (req, res, next) {
   });//form.on close
 });
 
-async function main(fileName) {
+async function main(fileName,config) {
   // Imports the Google Cloud client library
   const speech = require('@google-cloud/speech');
 
@@ -156,11 +164,8 @@ async function main(fileName) {
   const audio = {
     content: audioBytes,
   };
-  const config = {
-    encoding: 'LINEAR16',
-    sampleRateHertz: 16000,
-    languageCode: 'en-US',
-  };
+  
+
   const request = {
     audio: audio,
     config: config,
