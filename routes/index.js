@@ -199,7 +199,7 @@ async function main(fileName,config) {
     // Get a Promise representation of the final result of the job
   //  return operation.promise();
  // }).then(data=>{
-    getdata = data[0].results[0].alternatives[0];
+    getdata = data[0].results[0].alternatives;
     console.log(`${JSON.stringify(getdata)}`);
 
     return getdata;
