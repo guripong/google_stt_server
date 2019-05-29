@@ -101,12 +101,11 @@ router.post('/', function (req, res, next) {
       });
       */
      var config = {
+      enableWordTimeOffsets: true,
       encoding: 'LINEAR16', //FLAC 도 테스트해볼것
       sampleRateHertz: 16000,
       languageCode: 'en-US',
-      speechContexts:{
-        phrases:["my name is sokiyoung","sokiyoung"]
-      }
+      speechContexts:[{ phrases: ["my name is sokiyoung","sokiyoung"] }]
 
      };
 
